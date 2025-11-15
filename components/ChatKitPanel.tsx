@@ -263,22 +263,52 @@ export function ChatKitPanel({
 
   const chatkit = useChatKit({
     api: { getClientSecret },
-    theme: {
-      colorScheme: theme,
-      ...getThemeConfig(theme),
-    },
-    startScreen: {
-      greeting: GREETING,
-      prompts: STARTER_PROMPTS,
-    },
-    composer: {
-      placeholder: PLACEHOLDER_INPUT,
-      attachments: {
-        // Enable attachments
-        enabled: true,
+theme: {
+    colorScheme: 'light',
+    radius: 'pill',
+    density: 'spacious',
+    color: {
+      grayscale: {
+        hue: 156,
+        tint: 5,
+        shade: 4
       },
+      accent: {
+        primary: '#2e649e',
+        level: 1
+      },
+      surface: {
+        background: '#a2e2a9',
+        foreground: '#d0fbd8'
+      }
     },
-    threadItemActions: {
+    typography: {
+      baseSize: 18,
+      fontFamily: '\'JetBrains Mono\', monospace',
+      fontFamilyMono: '\'JetBrains Mono\', monospace',
+      fontSources: [
+        {
+          family: 'JetBrains Mono',
+          style: 'normal',
+          weight: 300,
+          display: 'swap',
+          src: 'https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD1OwGtT0rU3BE.woff2',
+          unicodeRange: 'U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF'
+        }
+      // ...and 9 more font sources
+      ]
+    }
+  },
+  composer: {
+    attachments: {
+      enabled: false
+    },
+  },
+  startScreen: {
+    greeting: 'Ask me about the wheather',
+    prompts: [],
+  },
+  threadItemActions: {
       feedback: false,
     },
     onClientTool: async (invocation: {
