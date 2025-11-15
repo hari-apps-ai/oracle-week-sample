@@ -264,42 +264,38 @@ export function ChatKitPanel({
   const chatkit = useChatKit({
     api: { getClientSecret },
 theme: {
-    colorScheme: 'light',
+    colorScheme: 'dark',
     radius: 'pill',
     density: 'spacious',
     color: {
       grayscale: {
-        hue: 156,
+        hue: 255,
         tint: 5,
         shade: 4
       },
       accent: {
-        primary: '#2e649e',
+        primary: '#402f98',
         level: 1
-      },
-      surface: {
-        background: '#a2e2a9',
-        foreground: '#d0fbd8'
       }
     },
     typography: {
       baseSize: 18,
-      fontFamily: '\'JetBrains Mono\', monospace',
-      fontFamilyMono: '\'JetBrains Mono\', monospace',
+      fontFamily: '"OpenAI Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
+      fontFamilyMono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace',
       fontSources: [
         {
-          family: 'JetBrains Mono',
+          family: 'OpenAI Sans',
+          src: 'https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISans-Regular.woff2',
+          weight: 400,
           style: 'normal',
-          weight: 300,
-          display: 'swap',
-          src: 'https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD1OwGtT0rU3BE.woff2',
-          unicodeRange: 'U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF'
+          display: 'swap'
         }
-      // ...and 9 more font sources
+      // ...and 7 more font sources
       ]
     }
   },
   composer: {
+    placeholder: 'Ask about anywher',
     attachments: {
       enabled: false
     },
@@ -307,7 +303,7 @@ theme: {
   startScreen: {
     greeting: 'Ask me about the wheather',
     prompts: [],
-  },
+  },    
   threadItemActions: {
       feedback: false,
     },
